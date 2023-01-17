@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xmlns = "http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+   <h:head>
+      <title>Adder</title>
+      <h:outputStylesheet library = "css" name = "style.css"  />
+   </h:head>
+
+   <h:body>
+   		<div class="content">
+   			<h1 class="container">Adder Web Application</h1>
+   			
+		    <h:form id="form">
+		    	<div class="container">
+			    	<h:panelGrid id = "panel" columns = "2" border = "0" cellpadding = "10"  
+		            	   cellspacing = "10">   	      	
+				      		
+			      		<h:outputLabel value="Number 1: "/>
+			      		<h:inputText id="Number_1" value="#{addition._param1}">
+			      			<h:message for="Number_1" errorClass="error"/>
+			      		</h:inputText>
+		
+			      		<h:outputLabel value="Number 2: "/>
+			      		<h:inputText id="Number_2" value="#{addition._param2}">
+			      			<h:message for="Number_2" errorClass="error"/>
+			      		</h:inputText>
+			      		
+		   			</h:panelGrid>
+	   			</div>
+                	
+	   			<div  class="container">  	      	
+		      		<h:commandButton action="#{addition.add}" class= "button" id="add" value="Add" />
+	   			</div>
+	   			
+	   			<div class="container font">
+		   			<h:panelGrid id = "panel_1" columns = "2" border = "0" cellpadding = "10"  
+		            	   cellspacing = "1">
+		                <h:outputLabel value="Sum: "/> 
+		                <h:outputText id="sum" value="#{addition._sum}" class="sum" type="reset">
+		                	<f:convertNumber maxFractionDigits = "3" />
+		                </h:outputText>
+		             </h:panelGrid>
+	             </div>        	            
+		    </h:form>
+	    </div>
+	    <h:outputScript library="js" name="common.js" />
+   </h:body>
+</html>
